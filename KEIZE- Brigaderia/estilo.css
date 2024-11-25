@@ -1,0 +1,319 @@
+/* Reset básico */
+body, h1, h2, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e fontes */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+header {
+    background: #7179f3;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Seções */
+.hero {
+    background: url('img-placeholder.png') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+ 
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 0.9rem;
+    align-self:flex-start;
+}
+
+.sobre, .produtos, .contato {
+    padding: 2rem;
+    text-align:center;
+    align-self: center;
+
+}
+
+footer {
+    background: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.galeria {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.galeria li {
+    max-width: 150px;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Formulário */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+   
+    text-align:center;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #7179f3;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    background: #7179f3;
+}
+
+
+_____________
+
+/* Galeria Horizontal */
+.galeria-horizontal {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+perspective: 1000px; /* Adiciona profundidade 3D */
+}
+
+.galeria-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.galeria-container {
+    display: flex;
+    gap: 1rem;
+    transform: translateX(0);
+    transition: transform 0.5s ease, transform-origin 0.5s ease;
+}
+
+.galeria-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+    transform-origin: center center; /* Ponto de rotação 3D */
+    transition: transform 0.5s ease; /* Suaviza o efeito */
+}
+
+.seta {
+    background-color: #7179f3;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+/* Define os efeitos 3D */
+.galeria-container img:not(:nth-child(1)) {
+    transform: rotateY(-15deg) scale(0.9);
+    opacity: 0.7;
+}
+
+/* Quando ativo (primeira imagem visível) */
+.galeria-container img.active {
+    transform: rotateY(0) scale(1);
+    opacity: 1;
+}
+
+.seta:hover {
+    background-color: #7179f3;
+}
+
+.seta.esquerda {
+    left: 10px;
+}
+
+.seta.direita {
+    right: 10px;
+}
+
+
+/* Reset básico */
+body, h1, h2, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: #7179f3;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Galeria Horizontal */
+.galeria-horizontal {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+.galeria-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.galeria-container {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.5s ease;
+}
+
+.galeria-container img {
+    width: 100%;
+    max-width: 300px; /* Limita o tamanho máximo */
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.seta {
+    background-color: #7179f3;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.seta:hover {
+    background-color: #7179f3;
+}
+
+.seta.esquerda {
+    left: 10px;
+}
+
+.seta.direita {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .galeria-container img {
+        max-width: 200px; /* Tamanho menor para telas menores */
+    }
+
+    .seta {
+        font-size: 1.5rem;
+    }
+}
